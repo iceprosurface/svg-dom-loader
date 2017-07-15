@@ -1,0 +1,23 @@
+{
+  "name": "svg-dom-loader",
+  "version": "0.0.1",
+  "description": "a svg loader for parse svg element into dom",
+  "main": "index.js",
+  "dependencies": {
+    "htmlparser": "^1.7.7",
+    "radixer": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iceprosurface/svg-dom-loader"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "svg"
+  ],
+  "author": "icepro",
+  "license": "MIT"
+}
