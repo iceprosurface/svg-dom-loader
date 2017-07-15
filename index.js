@@ -55,19 +55,19 @@ function createElement (node, parent, fnName) {
 module.exports = function (source) {
     var handler = new htmlparser.DefaultHandler(function (error, dom) {
         if (error) {
-        	throw new Error('Must only contain one svg')
+        	throw new Error('Can`t parse svg.')
         } else {
         	// TODO: tell some to user
         }
     });
     var parser = new htmlparser.Parser(handler);
     parser.parseComplete(source);
-    domAST = handler.dom
-    if (domAST.length !== 1) {
-        throw new Error('Must only contain one svg')
-    }
-    if (domAST[0].type !== 'tag' && domAST[0].name !== 'svg') {
-        throw new Error('Must contain one svg, and no any space character')
+    var domAST = handler.dom
+    var rootSvg = domAST.filter(function(_) {
+        return _.name === 'svg'
+    })
+    if (rootSvg.length !== 1) {
+        throw new Error('Must only contain one svg, now find:' + rootSvg.length)
     }
     // function name, it should be increate when Declare another function
     var fnName = 0;
@@ -78,7 +78,7 @@ module.exports = function (source) {
     var exits = []
     var labels = []
     fnName++;
-    traverseBF(domAST[0], root, function (node, parent) {
+    traverseBF(rootSvg[0], root, function (node, parent) {
         var name = radixer.numberToString(fnName);
         if (parent && node.type !== 'text') {
             el = createElement(node, parent, name);
