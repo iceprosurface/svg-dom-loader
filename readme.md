@@ -6,22 +6,22 @@ A web plugin for transforming svg into dom element,prefer working in flow chart 
 
 ## install
 
-```
+```bash
 npm install svg-dom-loader
 ```
 
 ## usage
-```
+```javascript
     module: {
       loaders: [
         {test: /\.svg$/,loader: 'svg-loader'}
       ],
-    },
+    }
 ```
 
 Perhaps svg may like this: 
 
-```
+```html
 <svg>
     <circle cx="30" cy="33" r="30" style="fill:rgb(170,130,183); stroke:none;"></circle>
     <circle cx="30" cy="33" r="14" style="stroke-width:2; stroke:#fff; fill:none;"></circle>
@@ -32,13 +32,14 @@ Perhaps svg may like this:
 ```
 
 parse:
-```
+
+```javascript
 var svg = require('./test.svg')
 ```
 
 parsed:
 
-```
+```html
 <g>
     <circle cx="30" cy="33" r="30" style="fill:rgb(170,130,183); stroke:none;"></circle>
     <circle cx="30" cy="33" r="14" style="stroke-width:2; stroke:#fff; fill:none;"></circle>
@@ -50,7 +51,7 @@ parsed:
 
 data construction:
 
-```
+```javascript
 {
 	// root element 
 	root,
