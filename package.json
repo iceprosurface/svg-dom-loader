@@ -1,6 +1,6 @@
 {
   "name": "svg-dom-loader",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "a svg loader for parse svg element into dom",
   "main": "index.js",
   "dependencies": {
