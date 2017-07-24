@@ -83,13 +83,13 @@ module.exports = function (source) {
         if (parent && node.type !== 'text') {
             el = createElement(node, parent, name);
             if (el.label) {
-                labels.push('{el:' + name + ',attr:' + el.label + '}')
+                labels.push('{el:' + name + ',attr:"' + el.label + '"}')
             }
             if (el.entry) {
-                entries.push('{el:' + name + ',attr:' + el.entry + '}')
+                entries.push('{el:' + name + ',attr:"' + el.entry + '"}')
             }
             if (el.exit) {
-                exits.push('{el:' + name + ',attr:' + el.exit + '}')
+                exits.push('{el:' + name + ',attr:"' + el.exit + '"}')
             }
             dom += el.dom;
             fnName++;
